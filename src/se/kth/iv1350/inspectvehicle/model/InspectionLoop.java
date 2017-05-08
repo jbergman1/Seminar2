@@ -18,13 +18,17 @@ public class InspectionLoop {
     public InspectionLoop(DatabaseManager dbMgr){
     int i = 0;
     inspectThis = DatabaseManager.getItemsToInspect();
-    while (i < inspectThis.length)
+    inspectionResults = new String[inspectThis.length];
+    while (i < inspectThis.length){
         inspectionResults[i] = inspectThis[i] + " passed.";
+        i++;
+        }
     }
     /*
     * Prints the results of the inspections
     */
     public void printResults(){
+        printer = new Printer();
         printOut = new PrintOut(inspectionResults);
         printer.printPrintOut(printOut);
     }    

@@ -24,23 +24,11 @@ public class Controller {
       */
      public Controller(DatabaseManager dbMgr) {
          this.dbMgr = dbMgr;
-     }
-     /**
-      * Creates a new instance using the garage.
-      *
-      * @param garage The garage.
-      */
-     public Controller(Garage garage) {
-         this.garage = garage;
+         this.garage = new Garage();
+         this.inspectionLoop = new InspectionLoop(dbMgr);
+         this.printer = new Printer();
      }
 
-     /**
-      * Creates a new instance using the inspection loop
-      * @param inspectionLoop an inspection loop that loops through all the inspections
-      */
-     public Controller(InspectionLoop inspectionLoop){
-        this.inspectionLoop = inspectionLoop;
-     }
      /*
      * Lets the program know a new inspection can begin
      */

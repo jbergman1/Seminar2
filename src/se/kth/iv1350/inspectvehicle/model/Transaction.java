@@ -21,6 +21,7 @@ public class Transaction {
     this.customerCard = customerCard;
     this.inspectionCost = inspectionCost;
     this.printer = printer;
+    this.paymentAuthorizationSystem = new PaymentAuthorizationSystem();
     }
     
    /**
